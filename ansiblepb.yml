@@ -1,0 +1,12 @@
+---
+
+- hosts: 192.168.56.101
+  tasks:
+    - name: Copy files from controller to worker
+      copy:
+        src: "/media/petar/ADATA SD700/Lab5-Devops/app/{{ item }}"
+        dest: /home/petar/lab5/
+      with_items:
+        - Dockerfile
+        - index.html
+        - main.py

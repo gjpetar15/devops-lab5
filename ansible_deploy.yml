@@ -1,0 +1,16 @@
+---
+
+- hosts: 192.168.56.101
+  tasks:
+    - name: Pull docker image
+      docker_image:
+        name: petar15/flask-app
+        source: pull
+
+    - name: Run docker container
+      docker_container:
+        name: flas-app-container
+        image: petar15/flask-app
+        state: started
+        env:
+          PORT: 5000
