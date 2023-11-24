@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'DOCKER_IMAGE_NAME', defaultValue: 'flask-app', description: 'flask app for lab5')
+        string(name: 'DOCKER_IMAGE_NAME', defaultValue: 'flask-app', description: 'the name of the docker image')
     }
 
     stages {
