@@ -13,4 +13,4 @@
         image: petar15/flask-app
         state: started
         env:
-          PORT: 5000
+          PORT: '5000'
