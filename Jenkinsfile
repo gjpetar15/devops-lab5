@@ -13,10 +13,10 @@ pipeline {
         stage('Build and push docker image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhubcred', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
-                    sh 'docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}'
-                    sh 'docker build -t petar15/${params.DOCKER_IMAGE_NAME} .'
-                    sh 'docker push petar15/${params.DOCKER_IMAGE_NAME}'
-                    sh 'docker logout'
+                    sh "docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}"
+                    sh "docker build -t petar15/${params.DOCKER_IMAGE_NAME} ."
+                    sh "docker push petar15/${params.DOCKER_IMAGE_NAME}"
+                    sh "docker logout"
                 }
             }
         }
